@@ -1,3 +1,1 @@
-import 'babel-polyfill';
-
-console.log("run bg");
+console.log("run bg two sss");
