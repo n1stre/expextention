@@ -8,7 +8,7 @@
         "<all_urls>"
       ],
       "js": [
-        "app/dist/bundle.js"
+        "app.bundle.js"
       ]
     }
   ],
@@ -18,7 +18,7 @@
         "<all_urls>"
       ],
       "js": [
-        "app/dist/background.bundle.js"
+        "background.bundle.js"
       ]
     }
   ]
