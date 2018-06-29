@@ -1,3 +1,3 @@
 import 'babel-polyfill';
 
-console.log("run main");
+console.log("run bg");
