@@ -1,0 +1,11 @@
+.resizable-grid {
+  display: grid;
+
+  &__container {
+    padding: 20px 0;
+  }
+
+  &__separator {
+    background-color: red;
+  }
+}
