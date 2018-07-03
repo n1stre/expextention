@@ -1,4 +1,4 @@
-const UnsafeStore = new Map();
+const UnsafeStore = new Map()
 
 /*
 
@@ -31,9 +31,6 @@ Returns a new Iterator object that contains the values for each element in the M
 Map.prototype[@@iterator]()
 Returns a new Iterator object that contains an array of [key, value] for each element in the Map object in insertion order.
 
-
 */
 
-
-
-export default UnsafeStore;
+export default UnsafeStore
