@@ -1,5 +1,7 @@
-import * as documentHelper from "./document";
+import * as documentHelper from "./helperDocument";
+import * as styleHelper from "./helperStyle";
 
 export {
-  documentHelper
+  documentHelper,
+  styleHelper
 };
