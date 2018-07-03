@@ -1,18 +1,20 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { createElement, replaceBodyContent, copyContentsOf } from './helpers/document';
-import UnsafeStore from './utils/UnsafeStore';
+import { replaceBodyContentWith } from './helpers/helperDocument';
+import OriginalPageContext from './contexts/OriginalPage';
+import Layout from './components/containers/Layout';
+
+const rootElement = document.createElement('div');
+const originalInnerHtml = document.body.innerHTML;
 
 const App = ({ route }) => (
-  <Provider store = { store } >
-    <Router routes = { routes(route) } />
-  </Provider>
+  <OriginalPageContext.Provider html={originalInnerHtml}>
+    <Router>
+      <Layout />
+    </Router>
+  </OriginalPageContext.Provider>
 )
 
-createElement('div', { id: "app" })
-  .then(replaceBodyContent)
-  .then(() => {
-    UnsafeStore.set("originalContent", document.body.innerHTML)
-  })
+replaceBodyContentWith(rootElement)
+render(<App {...data} />, rootElement);
