@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "checkJs": true,
+    "jsx": "react",
+    "baseUrl": ".",
+    "paths": {
+      "@presentational": ["app/src/components/presentational/index.js"],
+      "@presentational/*": ["app/src/components/presentational/*"],
+      "@containers": ["app/src/components/containers/index.js"],
+      "@containers/*": ["app/src/components/containers/*"],
+      "@hocs": ["app/src/components/hocs/index.js"],
+      "@hocs/*": ["app/src/components/hocs/*"],
+      "@screens": ["app/src/components/screens/index.js"],
+      "@screens/*": ["app/src/components/screens/*"],
+      "@helpers": ["app/src/helpers/index.js"],
+      "@helpers/*": ["app/src/helpers/*"],
+      "@utils": ["app/src/utils/index.js"],
+      "@utils/*": ["app/src/utils/*"]
+    },
+  },
+  "include": [
+    "app/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/node_modules/*"
+  ]
+}
