@@ -1,15 +1,15 @@
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 
 const propTypes = {
-  html: PropTypes.string.isRequired,
+  html: PropTypes.string.isRequired
 }
 
 const HtmlContent = (props) => {
   const style = {
     width: '100%',
     height: '100%',
-    overflow: "scroll"
+    overflow: 'scroll'
   }
 
   return (

@@ -1,19 +1,17 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import ResizableGridUnidirectional from '../ResizableGridUnidirectional';
+import ResizableGrid from '../ResizableGrid'
 
 export default class Layout extends Component {
-  static propTypes = {
-    prop: PropTypes
-  }
-
-  render() {
+  render () {
     return (
-      <div className="layout">
-        <ResizableGridUnidirectional
+      <div className='layout'>
+        <ResizableGrid
           childrenTitles={['Test', 'Hello', 'World']}
-          childrenFlex={[1,1,1]}>
-
+          childrenFlex={[1, 1, 1]}>
+          <p>one</p>
+          <p>two</p>
+          <p>triee</p>
+        </ResizableGrid>
       </div>
     )
   }

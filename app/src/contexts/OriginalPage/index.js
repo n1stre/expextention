@@ -6,7 +6,7 @@ const { Provider, Consumer } = Context
 const EnhancedProvider = props => {
   return (
     <Provider value={{ html: props.html }}>
-      { this.props.children }
+      { props.children }
     </Provider>
   )
 }

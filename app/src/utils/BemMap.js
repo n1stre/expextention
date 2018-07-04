@@ -19,39 +19,39 @@ const createBemMap = (callback, customOptions) => {
     result[key] = stringifyAndTraverse(result[key])
   })
 
-  return result;
+  return result
 }
 
 const provideToString = (branch = {}, resultString) => {
   return Object.assign(branch, {
     toString: () => resultString,
     valueOf: () => resultString
-  });
+  })
 }
 
-const stringifyAndTraverse = (branch, prefix = "") => {
-  if (Boolean(branch)) {
-    const stringName = prefix + branch;
+const stringifyAndTraverse = (branch, prefix = '') => {
+  if (branch) {
+    const stringName = prefix + branch
 
-    provideToString(branch, stringName);
+    provideToString(branch, stringName)
     whitelistedKeys(branch).forEach(key => {
       branch[key] = stringifyAndTraverse(branch[key], stringName)
-    });
+    })
   }
 
-  return branch;
+  return branch
 }
 
 const makeBlock = options => (blockName, branch = {}) => {
-  return provideToString(branch, blockName);
+  return provideToString(branch, blockName)
 }
 
 const makeElement = options => (elmName, branch = {}) => {
-  return provideToString(branch, options.elementSeparator + elmName);;
+  return provideToString(branch, options.elementSeparator + elmName)
 }
 
 const makeModifier = options => (modName, branch = {}) => {
-  return provideToString(branch, options.modifierSeparator + modName);
+  return provideToString(branch, options.modifierSeparator + modName)
 }
 
 const whitelistedKeys = object => {
@@ -62,6 +62,10 @@ const isPropWhitelisted = propName => (
   propName !== 'toString' &&
   propName !== 'valueOf'
 )
+
+export default {
+  create: createBemMap
+}
 
 // const bm = createBemMap((b,e,m) => ({
 //   resizer: b('unidir-children-resizer', {
