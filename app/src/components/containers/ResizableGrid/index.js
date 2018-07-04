@@ -1,71 +1,53 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import BemMap from '../../../utils/BemMap';
-import Container from './Container';
-
-const bem = BemMap.create((b,e,m) => ({
-  resizableGrid: b('resizable-grid', {
-    unidir: m('unidirectional'),
-    container: e('container'),
-    separatorTitle: e('separator-title'),
-    separator: e('separator', {
-      withTitle: m('with-title')
-    })
-  })
-}));
+import bem from './styleNamesBemMap'
+import './style.scss'
 
 const propTypes = {
   isHozinotal: PropTypes.bool,
-  childrenFlex: PropTypes.arrayOf(PropTypes.number),
+  templateColumns: PropTypes.string,
+  templateRows: PropTypes.string,
   childrenTitles: PropTypes.arrayOf(PropTypes.string).isRequired,
-  Separator: PropTypes.node,
+  Separator: PropTypes.node
 }
 
 export default class ResizableGrid extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.state = {
       childrenFlex: [...props.childrenFlex]
     }
   }
 
-  get DefaultSeparator({ title = '', idx }) {
-    return (
-      <div className={bem.resizer.separator}>
-        {title}
-      </div>
-    )
+  get gridStyle () {
+
   }
 
-  get Separator() {
-    return this.props.Separator || this.DefaultSeparator
-  }
-
-  render() {
-    const { Separator, Container } = this;
-
+  render () {
     return (
       <div
-        className={bmp.resizableGrid}
+        className={bem.resizableGrid}
         onMouseMove={this.onMouseMove}>
-        { React.Children.map((child, idx) => (
-            <React.Fragment key={idx}>
-              { (index !== 0 || this.props.childrenTitles[index]) &&
-                <Separator
-                  onMouseDown={this.makeOnMouseDown(index)}
-                  onMouseUp={this.makeOnMouseUp(index)}
-                  className={bmp.resizableGrid.separator}
-                  titleClassName={bmp.resizableGrid.separatorTitle}
-                  title={this.props.childrenTitles[index]}
-                />
-              }
-              { child }
-            </React.Fragment>
-          ))
-        }
+        { React.Children.map(this.props.children, (child, idx) => (
+          <React.Fragment key={idx}>
+            {/* {
+              (idx !== 0 || this.props.childrenTitles[idx]) &&
+              <Separator
+                onMouseDown={this.makeOnMouseDown(idx)}
+                onMouseUp={this.makeOnMouseUp(idx)}
+                className={bem.resizableGrid.separator}
+                titleClassName={bem.resizableGrid.separatorTitle}
+                title={this.props.childrenTitles[idx]}
+              />
+            } */}
+            {
+              child
+            }
+          </React.Fragment>
+        ))}
       </div>
     )
   }
 }
 
-ResizableGrid.propTypes = propTypes;
+ResizableGrid.propTypes = propTypes

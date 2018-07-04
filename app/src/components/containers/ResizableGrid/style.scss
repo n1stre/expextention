@@ -1,5 +1,8 @@
+
 .resizable-grid {
   display: grid;
+  align-items: stretch;
+  grid-gap: 20px;
 
   &__container {
     padding: 20px 0;
