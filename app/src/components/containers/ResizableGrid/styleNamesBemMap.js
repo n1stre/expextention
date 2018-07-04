@@ -1,8 +1,9 @@
-import BemMap from '../../../utils/BemMap'
+import BemMap from '@utils/BemMap'
 
 export default BemMap.create((b, e, m) => ({
   resizableGrid: b('resizable-grid', {
-    unidir: m('unidirectional'),
+    isHorizontal: m('is-horizontal'),
+    isFullSize: m('is-full-size'),
     item: e('item'),
     container: e('container'),
     separatorTitle: e('separator-title'),

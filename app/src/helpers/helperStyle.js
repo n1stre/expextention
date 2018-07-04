@@ -5,5 +5,10 @@ export const styleNames = (...styleNamesArr) => {
 }
 
 export const styleRules = (...styleRulesArr) => {
-  return filterByPresense(styleRulesArr)
+  return filterByPresense(styleRulesArr).reduce((result, nextItem) => {
+    return {
+      ...result,
+      ...nextItem
+    }
+  }, {})
 }

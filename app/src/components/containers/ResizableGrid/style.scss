@@ -2,13 +2,60 @@
 .resizable-grid {
   display: grid;
   align-items: stretch;
-  grid-gap: 20px;
+  grid-gap: 0;
 
-  &__container {
-    padding: 20px 0;
+  $separatorMinSize: 5px;
+  $separatorPadding: 10px;
+
+  &__item {
+    display: grid;
+    grid-gap: 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    grid-template-rows: min-content auto;
+
+    &:nth-child(1) {
+      background-color: transparentize(cyan, 0.5);
+    }
+    &:nth-child(2) {
+      background-color: transparentize(magenta, 0.5);
+    }
+    &:nth-child(3) {
+      background-color: transparentize(lime, 0.5);
+    }
+    &:nth-child(4) {
+      background-color: transparentize(purple, 0.5);
+    }
   }
 
   &__separator {
+    padding: 0 $separatorPadding;
+    min-height: $separatorMinSize;
     background-color: red;
+    cursor: row-resize;
+    user-select: none;
   }
+
+  &--is-full-size {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  &--is-horizontal {
+    .resizable-grid {
+      &__item {
+        grid-template-rows: none;
+        grid-template-columns: min-content auto;
+      }
+      &__separator {
+        padding: $separatorPadding 0;
+        writing-mode: vertical-lr;
+        min-width: $separatorMinSize;
+        cursor: col-resize;
+      }
+    }
+  }
+
 }

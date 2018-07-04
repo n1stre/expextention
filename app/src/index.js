@@ -8,7 +8,7 @@ import Layout from './components/containers/Layout'
 const rootElement = document.createElement('div')
 const originalInnerHtml = document.body.innerHTML
 
-const App = ({ route }) => (
+const App = () => (
   <OriginalPageContext.Provider html={originalInnerHtml}>
     <Router>
       <Layout />
