@@ -17,4 +17,4 @@ const App = ({ route }) => (
 )
 
 replaceBodyContentWith(rootElement)
-render(<App {...data} />, rootElement)
+render(<App />, rootElement)

@@ -63,6 +63,10 @@ const isPropWhitelisted = propName => (
   propName !== 'valueOf'
 )
 
+export default {
+  create: createBemMap
+}
+
 // const bm = createBemMap((b,e,m) => ({
 //   resizer: b('unidir-children-resizer', {
 //     unique: m('unique'),
