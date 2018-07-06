@@ -11,7 +11,7 @@
     display: grid;
     grid-gap: 0;
     overflow-x: hidden;
-    overflow-y: scroll;
+    z-index: 1;
     grid-template-rows: min-content auto;
 
     &:nth-child(1) {

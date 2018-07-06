@@ -1,0 +1,37 @@
+.elm-high {
+  position: relative;
+
+  &__color-box,
+  &__info {
+    position: fixed;
+    display: none;
+    pointer-events: none;
+  }
+
+  &__color-box {
+    z-index: 1000;
+    opacity: 0.7;
+    background-color: blue;
+    border-color: red;
+    border-style: solid;
+  }
+
+  &__info {
+    background-color: grey;
+    border-radius: 10px;
+    font-size: 10px;
+  }
+
+
+  &--with-element {
+    .elm-high {
+      &__color-box {
+        display: block;
+      }
+
+      &__info {
+        display: inline-block;
+      }
+    }
+  }
+}
