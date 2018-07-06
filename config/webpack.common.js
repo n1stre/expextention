@@ -1,11 +1,13 @@
 const path = require('path')
-const componentsPath = '../app/src/components'
+const srcPath = '../app/src'
+const distPath = '../app/dist'
+const componentsPath = `${srcPath}/components`
 const resolveFromHere = destination => path.resolve(__dirname, destination)
 
 module.exports = {
   output: {
     filename: '[name].bundle.js',
-    path: resolveFromHere('../app/dist')
+    path: resolveFromHere(distPath)
   },
   resolve: {
     alias: {
@@ -13,8 +15,9 @@ module.exports = {
       '@presentational': resolveFromHere(`${componentsPath}/presentational`),
       '@hocs': resolveFromHere(`${componentsPath}/hocs`),
       '@screens': resolveFromHere(`${componentsPath}/screens`),
-      '@helpers': resolveFromHere('../app/src/helpers'),
-      '@utils': resolveFromHere('../app/src/utils')
+      '@helpers': resolveFromHere(`${srcPath}/helpers`),
+      '@utils': resolveFromHere(`${srcPath}/utils`),
+      '@contexts': resolveFromHere(`${srcPath}/contexts`)
     }
   },
   module: {
