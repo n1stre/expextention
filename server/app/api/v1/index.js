@@ -1,8 +1,17 @@
 const express = require('express')
+const { createElementScreenShot } = require('../../utils/Puppeteer')
 const router = express.Router()
 
-router.get('/screenshot', (req, res) => {
-  res.json({ message: "OKOK"})
+router.post('/screenshot', (req, res) => {
+  createElementScreenShot(
+    req.body.pageData,
+    req.body.elemData
+  ).then((screenShot) => {
+    res.json({
+      success: true,
+      imageData: screenShot
+    })
+  })
 })
 
-export default router
+module.exports = router
