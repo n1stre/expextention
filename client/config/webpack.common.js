@@ -17,7 +17,8 @@ module.exports = {
       '@screens': resolveFromHere(`${componentsPath}/screens`),
       '@helpers': resolveFromHere(`${srcPath}/helpers`),
       '@utils': resolveFromHere(`${srcPath}/utils`),
-      '@contexts': resolveFromHere(`${srcPath}/contexts`)
+      '@contexts': resolveFromHere(`${srcPath}/contexts`),
+      '@api': resolveFromHere(`${srcPath}/api`)
     }
   },
   module: {
