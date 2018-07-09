@@ -1,16 +1,4 @@
 {
-  "compilerOptions": {
-    "target": "es6",
-    "module": "commonjs",
-    "checkJs": true,
-    "baseUrl": ".",
-    "paths": {
-      "@helpers": ["app/src/helpers/index.js"],
-      "@helpers/*": ["app/src/helpers/*"],
-      "@utils": ["app/src/utils/index.js"],
-      "@utils/*": ["app/src/utils/*"]
-    }
-  },
   "include": [
     "app/**/*"
   ],
