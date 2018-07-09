@@ -3,7 +3,7 @@ import OriginalPage from '@contexts/OriginalPage'
 import HtmlContent from '@presentational/HtmlContent'
 import ActiveElementHighlight from '@containers/ActiveElementHighlight'
 
-export default class index extends Component {
+class OriginalPageContainer extends Component {
   render () {
     return (
       <div>
@@ -20,3 +20,5 @@ export default class index extends Component {
     )
   }
 }
+
+export default OriginalPageContainer

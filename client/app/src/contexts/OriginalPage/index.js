@@ -40,6 +40,9 @@ class EnhancedProvider extends Component {
   }
 }
 
+export const Consumer = Context.Consumer
+export const Provider = EnhancedProvider
+
 export default {
   Provider: EnhancedProvider,
   Consumer: Context.Consumer

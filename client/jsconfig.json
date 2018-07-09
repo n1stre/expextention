@@ -19,7 +19,9 @@
       "@utils": ["app/src/utils/index.js"],
       "@utils/*": ["app/src/utils/*"],
       "@contexts": ["app/src/contexts/index.js"],
-      "@contexts/*": ["app/src/contexts/*"]
+      "@contexts/*": ["app/src/contexts/*"],
+      "@api": ["app/src/api/index.js"],
+      "@api/*": ["app/src/api/*"]
     },
   },
   "include": [
