@@ -1,0 +1,23 @@
+{
+  "name": "expextention",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "concurrently -n 'BACK,FRONT' -c 'cyan,green' 'yarn dev_backend' 'yarn dev_frontend'",
+    "dev_backend": "cd ./server && yarn dev",
+    "dev_frontend": "cd ./client && yarn watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/streletss/expextention.git"
+  },
+  "keywords": [],
+  "author": "Nikita Strelets",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/streletss/expextention/issues"
+  },
+  "homepage": "https://github.com/streletss/expextention#readme",
+  "devDependencies": {
+    "concurrently": "^3.6.0"
+  }
+}
