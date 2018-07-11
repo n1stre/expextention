@@ -3,6 +3,7 @@ import { Consumer as OriginalPageConsuner } from '@contexts/OriginalPage'
 import ResizableGrid from '../ResizableGrid'
 import ElementImage from '../ElementImage'
 import OriginalPage from '../OriginalPage'
+import Explorer from '../Explorer'
 import './style.scss'
 
 export default class Layout extends Component {
@@ -10,11 +11,16 @@ export default class Layout extends Component {
     return (
       <div className='layout'>
         <ResizableGrid
-          childrenTitles={['DOM', 'Original Page', 'Pic']}
           isHorizontal
-          template='100px auto 300px'
+          template='300px auto 300px'
         >
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium facilis consequatur consectetur porro vitae, quaerat commodi neque aliquam dolorum. Debitis molestiae numquam consequatur ipsa recusandae, quod iusto quibusdam veritatis officiis?</p>
+          <div>
+            <OriginalPageConsuner>
+              {({ pointedElement }) => {
+                return <Explorer element={pointedElement} />
+              }}
+            </OriginalPageConsuner>
+          </div>
 
           <div className='html-content'>
             <OriginalPage />
