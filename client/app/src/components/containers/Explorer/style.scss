@@ -1,0 +1,50 @@
+.explorer {
+  &__element {
+    &--is-opened {
+      > .explorer__element-name:before {
+        transform: rotateZ(0)
+      }
+
+      > .explorer__element-children {
+        display: block;
+      }
+    }
+
+    &--is-empty {
+      > .explorer__element-name:before {
+        display: none;
+      }
+    }
+  }
+
+  &__element-name {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    position: relative;
+    display: block;
+    padding-left: 15px;
+    margin: 0;
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-top: 6px solid red;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      transform: rotateZ(-90deg);
+    }
+  }
+
+  &__element-children {
+    margin-left: 15px;
+    display: none;
+  }
+}
